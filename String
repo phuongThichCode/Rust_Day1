@@ -1,0 +1,60 @@
+//Ex 1
+#[allow(dead_code)]
+fn exercise1(color: &str) -> String {
+    match color {
+        "red" => String::from("Apple"),
+        "green" => String::from("Leaf"),
+        "blue" => String::from("Sky"),
+        _ => String::from("Unknown"),
+    }
+}
+//Ex2
+fn exercise2() -> String {
+    let mut s = String::from("hello");
+    s.push(',');
+    s.push_str(" world");
+    s.push('!');
+    s
+}
+//Ex3
+fn exercise3() -> String {
+    let s1 = String::from("hello,");
+    let s2 = String::from("world!");
+    let s3 = s1 + &s2;
+    s3
+}
+//Ex4
+fn reverse_string(input: &str) -> String {
+    let mut reversed = String::new();
+
+    for c in input.chars().rev() {
+        reversed.push(c);
+    }
+
+    reversed
+}
+//Ex5
+fn is_palindrome(word: &str) -> bool {
+    let word = word.chars().collect::<Vec<char>>();
+    let len = word.len();
+
+    for i in 0..len / 2 {
+        if word[i] != word[len - 1 - i] {
+            return false;
+        }
+    }
+
+    true
+}
+//Ex6
+fn count_char_occurrences(string: &str, ch: char) -> usize {
+    let mut count = 0;
+
+    for c in string.chars() {
+        if c == ch {
+            count += 1;
+        }
+    }
+
+    count
+}
