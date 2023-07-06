@@ -1,0 +1,35 @@
+//Ex1
+fn sum(x: i32, y: i32) -> i32 {
+    x + y
+}
+//Ex2
+pub fn sum_one_to_n(n: u32) -> u32 {
+    let mut sum = 0;
+
+    for i in 1..=n {
+        sum += i;
+    }
+
+    sum
+}
+//Ex3
+fn calculate_average(numbers: &[f64]) -> f64 {
+    let sum: f64 = numbers.iter().sum();
+    let count = numbers.len() as f64;
+    sum/count
+}
+// Exercise 4
+// Calculate the sum of all even numbers in a list
+fn sum_even_numbers(numbers: &[i32]) -> i32 {
+    let mut sum = 0;
+
+    for &num in numbers {
+        if num % 2 == 0 {
+            sum += num;
+        }
+    }
+
+    sum
+}
+
+
